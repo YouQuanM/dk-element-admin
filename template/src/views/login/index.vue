@@ -32,7 +32,7 @@
             ref="password"
             v-model="loginForm.password"
             :type="passwordType"
-            :placeholder="$t('login.password')"
+            :placeholder="'login.password'"
             name="password"
             auto-complete="on"
             @keyup.native="checkCapslock"
