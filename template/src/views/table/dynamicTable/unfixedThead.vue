@@ -18,7 +18,7 @@
       <el-table-column prop="name" label="fruitName" width="180" />
       <el-table-column v-for="fruit in formThead" :key="fruit" :label="fruit">
         <template slot-scope="scope">
-          {{ scope.row[fruit] }}
+          \{{ scope.row[fruit] }}
         </template>
       </el-table-column>
     </el-table>

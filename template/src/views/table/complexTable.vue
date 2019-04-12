@@ -12,16 +12,16 @@
         <el-option v-for="item in sortOptions" :key="item.key" :label="item.label" :value="item.key" />
       </el-select>
       <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">
-        {{ 'table.search' }}
+        \{{ 'table.search' }}
       </el-button>
       <el-button class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit" @click="handleCreate">
-        {{ 'table.add' }}
+        \{{ 'table.add' }}
       </el-button>
       <el-button v-waves :loading="downloadLoading" class="filter-item" type="primary" icon="el-icon-download" @click="handleDownload">
-        {{ 'table.export' }}
+        \{{ 'table.export' }}
       </el-button>
       <el-checkbox v-model="showReviewer" class="filter-item" style="margin-left:15px;" @change="tableKey=tableKey+1">
-        {{ 'table.reviewer' }}
+        \{{ 'table.reviewer' }}
       </el-checkbox>
     </div>
 
@@ -37,28 +37,28 @@
     >
       <el-table-column :label="'table.id'" prop="id" sortable="custom" align="center" width="80">
         <template slot-scope="scope">
-          <span>{{ scope.row.id }}</span>
+          <span>\{{ scope.row.id }}</span>
         </template>
       </el-table-column>
       <el-table-column :label="'table.date'" width="150px" align="center">
         <template slot-scope="scope">
-          <span>{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>\{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
         </template>
       </el-table-column>
       <el-table-column :label="'table.title'" min-width="150px">
         <template slot-scope="{row}">
-          <span class="link-type" @click="handleUpdate(row)">{{ row.title }}</span>
-          <el-tag>{{ row.type | typeFilter }}</el-tag>
+          <span class="link-type" @click="handleUpdate(row)">\{{ row.title }}</span>
+          <el-tag>\{{ row.type | typeFilter }}</el-tag>
         </template>
       </el-table-column>
       <el-table-column :label="'table.author'" width="110px" align="center">
         <template slot-scope="scope">
-          <span>{{ scope.row.author }}</span>
+          <span>\{{ scope.row.author }}</span>
         </template>
       </el-table-column>
       <el-table-column v-if="showReviewer" :label="'table.reviewer'" width="110px" align="center">
         <template slot-scope="scope">
-          <span style="color:red;">{{ scope.row.reviewer }}</span>
+          <span style="color:red;">\{{ scope.row.reviewer }}</span>
         </template>
       </el-table-column>
       <el-table-column :label="'table.importance'" width="80px">
@@ -68,30 +68,30 @@
       </el-table-column>
       <el-table-column :label="'table.readings'" align="center" width="95">
         <template slot-scope="{row}">
-          <span v-if="row.pageviews" class="link-type" @click="handleFetchPv(row.pageviews)">{{ row.pageviews }}</span>
+          <span v-if="row.pageviews" class="link-type" @click="handleFetchPv(row.pageviews)">\{{ row.pageviews }}</span>
           <span v-else>0</span>
         </template>
       </el-table-column>
       <el-table-column :label="'table.status'" class-name="status-col" width="100">
         <template slot-scope="{row}">
           <el-tag :type="row.status | statusFilter">
-            {{ row.status }}
+            \{{ row.status }}
           </el-tag>
         </template>
       </el-table-column>
       <el-table-column :label="'table.actions'" align="center" width="230" class-name="small-padding fixed-width">
         <template slot-scope="{row}">
           <el-button type="primary" size="mini" @click="handleUpdate(row)">
-            {{ 'table.edit' }}
+            \{{ 'table.edit' }}
           </el-button>
           <el-button v-if="row.status!='published'" size="mini" type="success" @click="handleModifyStatus(row,'published')">
-            {{ 'table.publish' }}
+            \{{ 'table.publish' }}
           </el-button>
           <el-button v-if="row.status!='draft'" size="mini" @click="handleModifyStatus(row,'draft')">
-            {{ 'table.draft' }}
+            \{{ 'table.draft' }}
           </el-button>
           <el-button v-if="row.status!='deleted'" size="mini" type="danger" @click="handleModifyStatus(row,'deleted')">
-            {{ 'table.delete' }}
+            \{{ 'table.delete' }}
           </el-button>
         </template>
       </el-table-column>
@@ -126,10 +126,10 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">
-          {{ 'table.cancel' }}
+          \{{ 'table.cancel' }}
         </el-button>
         <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">
-          {{ 'table.confirm' }}
+          \{{ 'table.confirm' }}
         </el-button>
       </div>
     </el-dialog>
@@ -140,7 +140,7 @@
         <el-table-column prop="pv" label="Pv" />
       </el-table>
       <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="dialogPvVisible = false">{{ 'table.confirm' }}</el-button>
+        <el-button type="primary" @click="dialogPvVisible = false">\{{ 'table.confirm' }}</el-button>
       </span>
     </el-dialog>
   </div>
