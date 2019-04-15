@@ -37,7 +37,7 @@ module.exports = {
   }
   ],
   actions: data => {
-    const name = '{{properCase name}}'
+    const name = '\{{properCase name}}'
     const actions = [{
       type: 'add',
       path: `src/components/${name}/index.vue`,
