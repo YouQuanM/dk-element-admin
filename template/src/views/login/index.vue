@@ -4,7 +4,7 @@
 
       <div class="title-container">
         <h3 class="title">
-          \{{ 'login.title' }}
+          \\{{ 'login.title' }}
         </h3>
       </div>
 
@@ -46,29 +46,29 @@
       </el-tooltip>
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">
-        \{{ 'login.logIn' }}
+        \\{{ 'login.logIn' }}
       </el-button>
 
       <div style="position:relative">
         <div class="tips">
-          <span>\{{ 'login.username' }} : admin</span>
-          <span>\{{ 'login.password' }} : \{{ 'login.any' }}</span>
+          <span>\\{{ 'login.username' }} : admin</span>
+          <span>\\{{ 'login.password' }} : \\{{ 'login.any' }}</span>
         </div>
         <div class="tips">
           <span style="margin-right:18px;">
-            \{{ 'login.username' }} : editor
+            \\{{ 'login.username' }} : editor
           </span>
-          <span>\{{ 'login.password' }} : \{{ 'login.any' }}</span>
+          <span>\\{{ 'login.password' }} : \\{{ 'login.any' }}</span>
         </div>
 
         <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
-          \{{ 'login.thirdparty' }}
+          \\{{ 'login.thirdparty' }}
         </el-button>
       </div>
     </el-form>
 
     <el-dialog :title="'login.thirdparty'" :visible.sync="showDialog">
-      \{{ 'login.thirdpartyTips' }}
+      \\{{ 'login.thirdpartyTips' }}
       <br>
       <br>
       <br>
