@@ -22,4 +22,3 @@ export default function openWindow(url, title, w, h) {
     newWindow.focus()
   }
 }
-
