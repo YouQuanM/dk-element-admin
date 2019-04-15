@@ -4,7 +4,7 @@
 
       <div class="title-container">
         <h3 class="title">
-          {{ $t('login.title') }}
+          \{{ 'login.title' }}
         </h3>
       </div>
 
@@ -15,7 +15,7 @@
         <el-input
           ref="username"
           v-model="loginForm.username"
-          :placeholder="$t('login.username')"
+          :placeholder="'login.username'"
           name="username"
           type="text"
           auto-complete="on"
@@ -32,7 +32,7 @@
             ref="password"
             v-model="loginForm.password"
             :type="passwordType"
-            :placeholder="$t('login.password')"
+            :placeholder="'login.password'"
             name="password"
             auto-complete="on"
             @keyup.native="checkCapslock"
@@ -46,29 +46,29 @@
       </el-tooltip>
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">
-        {{ $t('login.logIn') }}
+        \{{ 'login.logIn' }}
       </el-button>
 
       <div style="position:relative">
         <div class="tips">
-          <span>{{ $t('login.username') }} : admin</span>
-          <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
+          <span>\{{ 'login.username' }} : admin</span>
+          <span>\{{ 'login.password' }} : \{{ 'login.any' }}</span>
         </div>
         <div class="tips">
           <span style="margin-right:18px;">
-            {{ $t('login.username') }} : editor
+            \{{ 'login.username' }} : editor
           </span>
-          <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
+          <span>\{{ 'login.password' }} : \{{ 'login.any' }}</span>
         </div>
 
         <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
-          {{ $t('login.thirdparty') }}
+          \{{ 'login.thirdparty' }}
         </el-button>
       </div>
     </el-form>
 
-    <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog">
-      {{ $t('login.thirdpartyTips') }}
+    <el-dialog :title="'login.thirdparty'" :visible.sync="showDialog">
+      \{{ 'login.thirdpartyTips' }}
       <br>
       <br>
       <br>
@@ -139,6 +139,7 @@ export default {
   methods: {
     checkCapslock({ shiftKey, key } = {}) {
       if (key && key.length === 1) {
+        // eslint-disable-next-line no-mixed-operators
         if (shiftKey && (key >= 'a' && key <= 'z') || !shiftKey && (key >= 'A' && key <= 'Z')) {
           this.capsTooltip = true
         } else {
